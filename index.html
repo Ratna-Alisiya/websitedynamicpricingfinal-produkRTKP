@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Packaging Rendang</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Scan QR Label Indikator</h1>
+    <div id="reader" style="width:300px; margin:auto;"></div>
+    <div id="quality"></div>
+    <div id="price"></div>
+
+    <div class="color-bar">
+      <div class="bar red-brown">Merah Kecoklatan<br>Sangat Layak<br>Rp 15.000</div>
+      <div class="bar orange">Merah Muda<br>Batas Layak<br>Rp 12.000</div>
+      <div class="bar yellow">Kuning Cerah<br>Tidak Layak<br>Rp 6.000</div>
+    </div>
+
+    <div id="generator">
+      <h2>Generate QR dari Nilai RGB & Parameter</h2>
+      <input type="number" id="r" placeholder="R (0-255)" min="0" max="255">
+      <input type="number" id="g" placeholder="G (0-255)" min="0" max="255">
+      <input type="number" id="b" placeholder="B (0-255)" min="0" max="255">
+      <input type="number" step="0.01" id="ph" placeholder="pH">
+      <input type="number" step="any" id="mikroba" placeholder="Mikroba (CFU/g)">
+      <input type="number" step="0.1" id="suhu" placeholder="Suhu (°C)">
+      <button onclick="generateQR()">Buat QR</button>
+      <canvas id="qrCanvas"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
